@@ -220,11 +220,28 @@ body {
   width: 100%;
   background: black;
   margin-top: 100px;
-  height: 100px;
+  height: auto;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding: 0 39px;
+  padding: 50px;
+}
+
+.footer-row1{
+  width: 100%;
+  background: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-row2{
+  width: 100%;
+  margin-top: 10px;
+  background: none;
+  align-items: center;
 }
 
 .footer-text {
@@ -232,6 +249,7 @@ body {
   font-size: var(--p-size);
   line-height: 21px;
   color: white;
+  text-align: center;
 }
 
 .social-icons {
@@ -241,8 +259,8 @@ body {
 }
 
 .social-icon {
-  width: 22px;
-  height: 22px;
+  width: 25px;
+  height: 25px;
   display: flex;
   align-items: center;
   justify-content: center;
