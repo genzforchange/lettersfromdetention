@@ -38,8 +38,9 @@ function loadLetters() {
     var images = [row.Image1].filter(Boolean);
     if (row.Image2) images.push(row.Image2);
 
-    var stateAbbr = (row.State || "").toUpperCase();
-    var stateName = STATE_NAMES[stateAbbr] || stateAbbr;
+    var stateRaw = (row.State || "").trim();
+    var stateAbbr = stateRaw.toUpperCase();
+    var stateName = STATE_NAMES[stateAbbr] || stateRaw;
 
     var descriptions = [];
     if (row.Desc1) descriptions.push(row.Desc1);
