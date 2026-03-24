@@ -8,10 +8,14 @@
   box-sizing: border-box;
 }
 
+/*colors*/
+--white: #ffffff;
+--black: #000000;
+
 body {
   font-family: 'Montserrat', Helvetica, sans-serif;
-  background: #fff;
-  color: #000;
+  background: white;
+  color: black;
 }
 
 .page {
@@ -54,7 +58,7 @@ body {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  border: 3px solid #000;
+  border: 3px solid black;
 }
 
 .search-handle {
@@ -63,7 +67,7 @@ body {
   left: 18px;
   width: 10px;
   height: 3px;
-  background: #000;
+  background: black;
   transform: rotate(45deg);
 }
 
@@ -77,13 +81,13 @@ body {
 .hamburger-line {
   width: 25px;
   height: 3px;
-  background: #000;
+  background: black;
 }
 
 .divider {
   margin: 10px 50px 0;
   height: 1px;
-  background: #000;
+  background: black;
 }
 
 .hero {
@@ -143,21 +147,21 @@ body {
   display: flex;
   flex-direction: row;
   height: 322px;
-  border: 1px solid #000;
-  background: #fff;
-  color: #000;
+  border: 1px solid black;
+  background: white;
+  color: black;
   transition: background-color 0.3s ease, color 0.3s ease;
   overflow: hidden;
 }
 
 .letter-card:hover {
-  background: #000;
-  color: #fff;
+  background: black;
+  color: white;
 }
 
 .letter-card:hover .card-name,
 .letter-card:hover .card-description {
-  color: #fff;
+  color: white;
 }
 
 .card-image-wrapper {
@@ -187,7 +191,7 @@ body {
   font-size: 34px;
   line-height: 34px;
   margin-bottom: 10px;
-  color: #000;
+  color: black;
   transition: color 0.3s ease;
 }
 
@@ -196,13 +200,13 @@ body {
   font-size: 16px;
   line-height: 26px;
   max-width: 353px;
-  color: #000;
+  color: black;
   transition: color 0.3s ease;
 }
 
 .footer {
   width: 100%;
-  background: #000;
+  background: black;
   margin-top: 100px;
   height: 100px;
   display: flex;
@@ -215,7 +219,7 @@ body {
   font-weight: 400;
   font-size: 26px;
   line-height: 26px;
-  color: #fff;
+  color: white;
 }
 
 .social-icons {
@@ -227,7 +231,7 @@ body {
 .social-icon {
   width: 22px;
   height: 22px;
-  background: #fff;
+  background: white;
 }
 
 .modal-overlay {
@@ -236,7 +240,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.95);
   z-index: 1000;
   display: flex;
   justify-content: center;
@@ -255,7 +259,7 @@ body {
 
 .modal-content {
   position: relative;
-  background: #fff;
+  background: none;
   max-width: 1200px;
   width: 90%;
   max-height: 90vh;
@@ -272,7 +276,7 @@ body {
   font-size: 36px;
   line-height: 1;
   cursor: pointer;
-  color: #000;
+  color: black;
   font-family: 'Montserrat', Helvetica, sans-serif;
   z-index: 1;
 }
@@ -289,10 +293,10 @@ body {
 
 .modal-images-container {
   flex-shrink: 0;
-  width: 450px;
+  width: 350px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 25px;
 }
 
 .modal-image-wrapper {
@@ -315,15 +319,15 @@ body {
   font-weight: 700;
   font-size: 34px;
   line-height: 40px;
-  margin-bottom: 20px;
-  color: #000;
+  margin-bottom: 25px;
+  color: black;
 }
 
 .modal-translation {
   font-weight: 400;
   font-size: 16px;
   line-height: 26px;
-  color: #000;
+  color: black;
 }
 
 @media (max-width: 1024px) {
