@@ -241,7 +241,6 @@ body {
 }
 
 .modal-overlay {
-  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -249,15 +248,19 @@ body {
   height: 100%;
   background: rgba(0, 0, 0, 0.9);
   z-index: 1000;
+  display: flex;
   justify-content: center;
   align-items: center;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
 .modal-overlay.active {
-  display: flex;
   opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 
 .modal-content {
