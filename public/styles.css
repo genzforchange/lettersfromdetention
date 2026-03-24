@@ -256,7 +256,6 @@ body {
 .modal-content {
   position: relative;
   background: #fff;
-  border: 1px solid #000;
   max-width: 1200px;
   width: 90%;
   max-height: 90vh;
@@ -288,9 +287,16 @@ body {
   gap: 40px;
 }
 
-.modal-image-wrapper {
+.modal-images-container {
   flex-shrink: 0;
   width: 450px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.modal-image-wrapper {
+  width: 100%;
 }
 
 .modal-image {
@@ -409,7 +415,7 @@ body {
     flex-direction: column;
   }
 
-  .modal-image-wrapper {
+  .modal-images-container {
     width: 100%;
   }
 
