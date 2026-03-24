@@ -98,16 +98,6 @@ body {
   object-fit: cover;
 }
 
-.hero-img-1 { top: 9px; left: 0; width: 272px; height: 311px; }
-.hero-img-2 { top: 320px; left: 0; width: 199px; height: 493px; }
-.hero-img-3 { top: 24px; right: 38px; width: 177px; height: 172px; }
-.hero-img-4 { top: 228px; right: 35px; width: 235px; height: 388px; }
-.hero-img-5 { top: 161px; right: 0; width: 152px; height: 363px; }
-.hero-img-6 { top: 326px; left: 109px; width: 379px; height: 260px; }
-.hero-img-7 { top: 295px; left: 668px; width: 382px; height: 385px; }
-.hero-img-8 { top: 323px; left: 963px; width: 267px; height: 300px; }
-.hero-img-9 { top: 323px; left: 457px; width: 268px; height: 286px; }
-
 .hero-quote {
   position: relative;
   z-index: 10;
@@ -246,7 +236,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(255, 255, 255, 0.9);
   z-index: 1000;
   display: flex;
   justify-content: center;
@@ -266,11 +256,12 @@ body {
 .modal-content {
   position: relative;
   background: #fff;
-  max-width: 900px;
+  border: 1px solid #000;
+  max-width: 1200px;
   width: 90%;
   max-height: 90vh;
   overflow-y: auto;
-  padding: 50px;
+  padding: 60px;
 }
 
 .modal-close {
@@ -299,7 +290,7 @@ body {
 
 .modal-image-wrapper {
   flex-shrink: 0;
-  width: 350px;
+  width: 450px;
 }
 
 .modal-image {
