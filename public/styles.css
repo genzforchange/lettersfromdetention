@@ -1,0 +1,412 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', Helvetica, sans-serif;
+  background: #fff;
+  color: #000;
+}
+
+.page {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 75px 50px 0;
+}
+
+.header-title {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 40px;
+}
+
+.header-icons {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.search-icon {
+  position: relative;
+  width: 31px;
+  height: 31px;
+  cursor: pointer;
+}
+
+.search-circle {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 3px solid #000;
+}
+
+.search-handle {
+  position: absolute;
+  top: 20px;
+  left: 18px;
+  width: 10px;
+  height: 3px;
+  background: #000;
+  transform: rotate(45deg);
+}
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.hamburger-line {
+  width: 25px;
+  height: 3px;
+  background: #000;
+}
+
+.divider {
+  margin: 10px 50px 0;
+  height: 1px;
+  background: #000;
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  min-height: 585px;
+}
+
+.hero-image {
+  position: absolute;
+  object-fit: cover;
+}
+
+.hero-img-1 { top: 9px; left: 0; width: 272px; height: 311px; }
+.hero-img-2 { top: 320px; left: 0; width: 199px; height: 493px; }
+.hero-img-3 { top: 24px; right: 38px; width: 177px; height: 172px; }
+.hero-img-4 { top: 228px; right: 35px; width: 235px; height: 388px; }
+.hero-img-5 { top: 161px; right: 0; width: 152px; height: 363px; }
+.hero-img-6 { top: 326px; left: 109px; width: 379px; height: 260px; }
+.hero-img-7 { top: 295px; left: 668px; width: 382px; height: 385px; }
+.hero-img-8 { top: 323px; left: 963px; width: 267px; height: 300px; }
+.hero-img-9 { top: 323px; left: 457px; width: 268px; height: 286px; }
+
+.hero-quote {
+  position: relative;
+  z-index: 10;
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 117px 20px;
+  font-weight: 700;
+  font-size: 46px;
+  text-align: center;
+  line-height: 55px;
+  text-transform: uppercase;
+}
+
+.state-section {
+  padding: 0 50px;
+  margin-top: 10px;
+}
+
+.state-section + .state-section {
+  margin-top: 100px;
+}
+
+.state-title {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 40px;
+  margin-bottom: 10px;
+}
+
+.state-divider {
+  height: 1px;
+  background: #000;
+  margin-bottom: 51px;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+}
+
+.letter-card {
+  display: flex;
+  flex-direction: row;
+  height: 322px;
+  border: 1px solid #000;
+  background: #fff;
+  color: #000;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  overflow: hidden;
+}
+
+.letter-card:hover {
+  background: #000;
+  color: #fff;
+}
+
+.letter-card:hover .card-name,
+.letter-card:hover .card-description {
+  color: #fff;
+}
+
+.card-image-wrapper {
+  flex-shrink: 0;
+  width: 193px;
+  height: 244px;
+  align-self: center;
+  margin-left: 39px;
+}
+
+.card-image {
+  width: 193px;
+  height: 244px;
+  object-fit: cover;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-left: 25px;
+  padding-top: 39px;
+}
+
+.card-name {
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 34px;
+  margin-bottom: 10px;
+  color: #000;
+  transition: color 0.3s ease;
+}
+
+.card-description {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  max-width: 353px;
+  color: #000;
+  transition: color 0.3s ease;
+}
+
+.footer {
+  width: 100%;
+  background: #000;
+  margin-top: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 39px;
+}
+
+.footer-text {
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 26px;
+  color: #fff;
+}
+
+.social-icons {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.social-icon {
+  width: 22px;
+  height: 22px;
+  background: #fff;
+}
+
+@media (max-width: 1024px) {
+  .header {
+    padding: 40px 30px 0;
+  }
+
+  .header-title {
+    font-size: 30px;
+    line-height: 36px;
+  }
+
+  .divider {
+    margin: 10px 30px 0;
+  }
+
+  .hero {
+    min-height: 400px;
+  }
+
+  .hero-image {
+    display: none;
+  }
+
+  .hero-quote {
+    font-size: 32px;
+    line-height: 42px;
+    padding: 60px 30px;
+  }
+
+  .state-section {
+    padding: 0 30px;
+  }
+
+  .state-title {
+    font-size: 32px;
+  }
+
+  .cards-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .letter-card {
+    height: auto;
+    min-height: 200px;
+  }
+
+  .card-image-wrapper {
+    width: 140px;
+    height: 180px;
+    margin-left: 20px;
+  }
+
+  .card-image {
+    width: 140px;
+    height: 180px;
+  }
+
+  .card-content {
+    margin-left: 20px;
+    padding-top: 25px;
+    padding-right: 15px;
+  }
+
+  .card-name {
+    font-size: 26px;
+    line-height: 30px;
+  }
+
+  .card-description {
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  .footer {
+    padding: 0 30px;
+  }
+
+  .footer-text {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .header {
+    padding: 30px 20px 0;
+  }
+
+  .header-title {
+    font-size: 22px;
+    line-height: 28px;
+  }
+
+  .divider {
+    margin: 10px 20px 0;
+  }
+
+  .hero {
+    min-height: 250px;
+  }
+
+  .hero-quote {
+    font-size: 22px;
+    line-height: 32px;
+    padding: 40px 20px;
+  }
+
+  .state-section {
+    padding: 0 20px;
+  }
+
+  .state-title {
+    font-size: 26px;
+  }
+
+  .state-divider {
+    margin-bottom: 30px;
+  }
+
+  .cards-grid {
+    gap: 20px;
+  }
+
+  .letter-card {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    height: auto;
+  }
+
+  .card-image-wrapper {
+    margin-left: 0;
+    margin-bottom: 15px;
+    width: 160px;
+    height: 200px;
+  }
+
+  .card-image {
+    width: 160px;
+    height: 200px;
+  }
+
+  .card-content {
+    margin-left: 0;
+    padding-top: 0;
+    text-align: center;
+    align-items: center;
+  }
+
+  .card-name {
+    font-size: 22px;
+    line-height: 26px;
+  }
+
+  .card-description {
+    font-size: 14px;
+    line-height: 22px;
+    max-width: 100%;
+  }
+
+  .footer {
+    flex-direction: column;
+    height: auto;
+    padding: 20px;
+    gap: 15px;
+  }
+
+  .footer-text {
+    font-size: 18px;
+  }
+}
