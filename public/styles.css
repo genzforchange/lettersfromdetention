@@ -228,7 +228,7 @@ body {
 }
 
 .footer-text {
-  font-weight: 600;
+  font-weight: 500;
   font-size: var(--p-size);
   line-height: 21px;
   color: white;
@@ -241,8 +241,8 @@ body {
 }
 
 .social-icon {
-  width: 25px;
-  height: 25px;
+  width: 22px;
+  height: 22px;
   display: flex;
   align-items: center;
   justify-content: center;
