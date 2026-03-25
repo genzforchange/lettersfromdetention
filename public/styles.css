@@ -84,30 +84,27 @@ body {
 }
 
 .search-bar-container {
-  position: absolute;
-  right: 0;
-  top: 100%;
   display: none;
-  z-index: 10;
+  justify-content: flex-end;
+  padding: 10px 50px 0;
 }
 
 .search-bar-container.active {
-  display: block;
+  display: flex;
 }
 
 .search-input {
-  width: 25vw;
+  width: 25%;
   padding: 8px 12px;
   font-size: var(--p-size);
-  font-family: 'Montserrat', Helvetica, sans-serif;
+  font-family: 'Inter', sans-serif;
   border: 2px solid black;
-  border-top: none;
   outline: none;
   background: white;
 }
 
 .search-input:focus {
-  border-color: black;
+  border-color: #333;
 }
 
 .hamburger {
@@ -123,13 +120,8 @@ body {
   background: black;
 }
 
-.divider-wrapper {
-  position: relative;
-  padding: 0 50px;
-}
-
 .divider {
-  margin-top: 10px;
+  margin: 10px 50px 0;
   height: 1px;
   background: black;
 }
@@ -412,16 +404,16 @@ body {
     line-height: 36px;
   }
 
-  .divider-wrapper {
-    padding: 0 30px;
+  .divider {
+    margin: 10px 30px 0;
   }
 
-  .divider {
-    margin-top: 10px;
+  .search-bar-container {
+    padding: 10px 30px 0;
   }
 
   .search-input {
-    width: 40vw;
+    width: 40%;
   }
 
   .hero {
@@ -528,16 +520,16 @@ body {
     line-height: 28px;
   }
 
-  .divider-wrapper {
-    padding: 0 20px;
+  .divider {
+    margin: 10px 20px 0;
   }
 
-  .divider {
-    margin-top: 10px;
+  .search-bar-container {
+    padding: 10px 20px 0;
   }
 
   .search-input {
-    width: 60vw;
+    width: 60%;
   }
 
   .hero {
