@@ -3,7 +3,7 @@ function formatTranslation(text) {
     .split(/\n/)
     .map((line) => {
       const processed = line.replace(/\[([^\]]+)\]/g, function(match, content) {
-        if (/redacted/i.test(content)) {
+        if (/\bredacted\b/i.test(content)) {
           return '<span class="redacted">' + content + '</span>';
         }
         return content;
