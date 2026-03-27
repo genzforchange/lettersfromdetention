@@ -206,17 +206,14 @@ function formatTranslation(text) {
     var sectionHeight = heroSection.offsetHeight;
     var imageHeight = heroImage.offsetHeight;
     var maxShift = imageHeight - sectionHeight;
-    var scrollStart = heroSection.offsetTop;
-    var scrollEnd = scrollStart + sectionHeight;
+    var scrollEnd = heroSection.offsetTop + sectionHeight;
     var scrollY = window.pageYOffset || document.documentElement.scrollTop;
 
     var progress = 0;
-    if (scrollY <= scrollStart) {
-      progress = 0;
-    } else if (scrollY >= scrollEnd) {
+    if (scrollY >= scrollEnd) {
       progress = 1;
-    } else {
-      progress = (scrollY - scrollStart) / sectionHeight;
+    } else if (scrollY > 0) {
+      progress = scrollY / scrollEnd;
     }
 
     heroImage.style.transform = 'translateY(' + (-progress * maxShift) + 'px)';
