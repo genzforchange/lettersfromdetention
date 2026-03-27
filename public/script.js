@@ -198,6 +198,40 @@ function formatTranslation(text) {
     });
   }
 
+  var heroSection = document.querySelector('.hero');
+  var heroImage = document.querySelector('.hero-image');
+  var ticking = false;
+
+  function updateHeroScroll() {
+    var sectionHeight = heroSection.offsetHeight;
+    var imageHeight = heroImage.offsetHeight;
+    var maxShift = imageHeight - sectionHeight;
+    var scrollStart = heroSection.offsetTop;
+    var scrollEnd = scrollStart + sectionHeight;
+    var scrollY = window.pageYOffset || document.documentElement.scrollTop;
+
+    var progress = 0;
+    if (scrollY <= scrollStart) {
+      progress = 0;
+    } else if (scrollY >= scrollEnd) {
+      progress = 1;
+    } else {
+      progress = (scrollY - scrollStart) / sectionHeight;
+    }
+
+    heroImage.style.transform = 'translateY(' + (-progress * maxShift) + 'px)';
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', function() {
+    if (!ticking) {
+      requestAnimationFrame(updateHeroScroll);
+      ticking = true;
+    }
+  });
+
+  updateHeroScroll();
+
   fetch("/api/letters")
     .then(function (res) {
       return res.json();
