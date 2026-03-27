@@ -2,11 +2,13 @@ function formatTranslation(text) {
   return text
     .split(/\n/)
     .map((line) => {
-      const redacted = line.replace(
-        /\[([^\]]+)\]/g,
-        '<span class="redacted">$1</span>',
-      );
-      return `<p>${redacted}</p>`;
+      const processed = line.replace(/\[([^\]]+)\]/g, function(match, content) {
+        if (/redacted/i.test(content)) {
+          return '<span class="redacted">' + content + '</span>';
+        }
+        return content;
+      });
+      return `<p>${processed}</p>`;
     })
     .join("");
 }

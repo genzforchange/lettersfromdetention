@@ -37,6 +37,8 @@ function loadLetters() {
   return records.map(function (row, index) {
     var images = [row.Image1].filter(Boolean);
     if (row.Image2) images.push(row.Image2);
+    if (row.Image3) images.push(row.Image3);
+    if (row.Image4) images.push(row.Image4);
 
     var stateRaw = (row.State || "").trim();
     var stateAbbr = stateRaw.toUpperCase();
@@ -53,7 +55,7 @@ function loadLetters() {
       images: images,
       state: stateName,
       stateAbbr: stateAbbr,
-      translation: row.Translation || "",
+      translation: row.EngTranslation || row.Translation || "",
     };
   });
 }
