@@ -372,7 +372,7 @@ body {
 
 .modal-name {
   font-weight: 700;
-  font-size: 34px;
+  font-size: var(--h2-size);
   line-height: 40px;
   margin-bottom: 25px;
   color: black;
@@ -380,8 +380,8 @@ body {
 
 .modal-translation {
   font-weight: 400;
-  font-size: 16px;
-  line-height: 26px;
+  font-size: var(--p-size);
+  line-height: 21px;
   color: black;
 }
 .modal-translation p {
@@ -408,7 +408,7 @@ body {
 
   .header-title {
     font-size: var(--h2-size);
-    line-height: 36px;
+    line-height: 34px;
   }
 
   .divider {
@@ -433,8 +433,8 @@ body {
 
   .hero-quote {
     font-size: var(--h1-size);
-    line-height: 42px;
-    padding: 60px 30px;
+    line-height: 46px;
+    padding: 75px;
   }
 
   .state-section {
@@ -447,7 +447,7 @@ body {
 
   .cards-grid {
     grid-template-columns: 1fr;
-    gap: 30px;
+    gap: 25px;
   }
 
   .letter-card {
@@ -467,23 +467,21 @@ body {
   }
 
   .card-content {
-    margin-left: 20px;
-    padding-top: 25px;
-    padding-right: 15px;
+    margin: 25px;
   }
 
   .card-name {
     font-size: var(--h2-size);
-    line-height: 30px;
+    line-height: 34px;
   }
 
   .card-description {
     font-size: var(--p-size);
-    line-height: 22px;
+    line-height: 21px;
   }
 
   .footer {
-    padding: 0 30px;
+    padding: 25px;
   }
 
   .footer-text {
@@ -491,7 +489,8 @@ body {
   }
 
   .modal-content {
-    padding: 40px 30px;
+    width: 90%;
+    padding: 25px;
   }
 
   .modal-body {
@@ -503,8 +502,13 @@ body {
   }
 
   .modal-name {
-    font-size: 28px;
+    font-size: var(--h2-size);
     line-height: 34px;
+  }
+
+  .modal-translation{
+    font-size: var(--p-size);
+    line-height: 21px;
   }
 }
 
@@ -524,7 +528,7 @@ body {
 
   .header-title {
     font-size: var(--h2-size);
-    line-height: 28px;
+    line-height: 26px;
   }
 
   .divider {
@@ -545,7 +549,7 @@ body {
 
   .hero-quote {
     font-size: var(--h1-size);
-    line-height: 32px;
+    line-height: 34px;
     padding: 40px 20px;
   }
 
@@ -566,8 +570,7 @@ body {
   }
 
   .letter-card {
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
     padding: 20px;
     height: auto;
   }
@@ -589,6 +592,7 @@ body {
     padding-top: 0;
     text-align: center;
     align-items: center;
+    margin: 10px 25px;
   }
 
   .card-name {
@@ -600,6 +604,8 @@ body {
     font-size: var(--p-size);
     line-height: 22px;
     max-width: 100%;
+    margin: 0;
+    padding: 0;
   }
 
   .footer {
@@ -614,17 +620,17 @@ body {
   }
 
   .modal-content {
-    width: 95%;
-    padding: 30px 20px;
+    width: 90%;
+    padding: 25px;
   }
 
   .modal-name {
-    font-size: 22px;
-    line-height: 28px;
+    font-size: var(--h2-size);
+    line-height: 26px;
   }
 
   .modal-translation {
-    font-size: 14px;
-    line-height: 22px;
+    font-size: var(--p-size);
+    line-height: 21px;
   }
 }
