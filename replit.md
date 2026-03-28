@@ -12,7 +12,7 @@ A static website showcasing "Letters From Detention" — stories from people in 
 ## Project Structure
 ```
 ├── index.html             # Main page
-├── script.css             # All styling
+├── style.css              # All styling
 ├── script.js              # All logic + embedded letter data
 ├── favicon.png            # Site favicon
 ├── assets/
