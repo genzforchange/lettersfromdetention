@@ -246,7 +246,26 @@ function formatTranslation(text) {
     grid.className = "cards-grid";
 
     letters.forEach(function (letter, idx) {
-      grid.appendChild(createCard(letter, idx));
+      var card = createCard(letter, idx);
+      var hasTriggerWarning =
+        letter.firstName === "Erick" ||
+        (letter.descriptions.length > 0 &&
+          letter.descriptions[0].toUpperCase().indexOf("TRIGGER WARNING") !== -1);
+
+      if (hasTriggerWarning) {
+        var wrapper = document.createElement("div");
+        wrapper.className = "card-wrapper";
+        wrapper.appendChild(card);
+        var warning = document.createElement("div");
+        warning.className = "trigger-warning";
+        warning.setAttribute("data-testid", "trigger-warning-erick");
+        warning.textContent =
+          "The contents of this letter include mentions of suicide";
+        wrapper.appendChild(warning);
+        grid.appendChild(wrapper);
+      } else {
+        grid.appendChild(card);
+      }
     });
 
     container.appendChild(grid);
@@ -284,7 +303,10 @@ function formatTranslation(text) {
         letter.stateAbbr.toLowerCase().indexOf(q) !== -1 ||
         letter.translation.toLowerCase().indexOf(q) !== -1 ||
         letter.descriptions.join(" ").toLowerCase().indexOf(q) !== -1;
-      card.style.display = match ? "" : "none";
+      var target = card.parentElement && card.parentElement.classList.contains("card-wrapper")
+        ? card.parentElement
+        : card;
+      target.style.display = match ? "" : "none";
     });
   }
 

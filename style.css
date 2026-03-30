@@ -209,6 +209,15 @@ body {
   margin-bottom: 10px;
   color: black;
   transition: color 0.3s ease;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+.trigger-warning {
+  font-style: italic;
+  color: #888;
+  font-size: 13px;
+  margin-top: 6px;
 }
 
 
@@ -415,7 +424,7 @@ body {
   }
 
   .cards-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 25px;
   }
 
@@ -523,6 +532,7 @@ body {
   }
 
   .cards-grid {
+    grid-template-columns: 1fr;
     gap: 20px;
   }
 
