@@ -177,7 +177,9 @@ body {
   color: white;
 }
 
-.letter-card:hover .card-name,
+.letter-card:hover .card-name {
+  color: white;
+}
 
 .card-image-wrapper {
   flex-shrink: 0;
