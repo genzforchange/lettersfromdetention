@@ -111,17 +111,35 @@ function csvToLetters(records) {
   });
 }
 
+function escapeHtml(str) {
+  return str
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
 function formatTranslation(text) {
   return text
     .split(/\n/)
     .map((line) => {
-      const processed = line.replace(/\[([^\]]+)\]/g, function(match, content) {
+      let result = "";
+      let lastIndex = 0;
+      const pattern = /\[([^\]]+)\]/g;
+      let match;
+      while ((match = pattern.exec(line)) !== null) {
+        result += escapeHtml(line.slice(lastIndex, match.index));
+        const content = match[1];
         if (/\bredacted\b/i.test(content)) {
-          return '<span class="redacted">' + content + '</span>';
+          result += '<span class="redacted">' + escapeHtml(content) + "</span>";
+        } else {
+          result += escapeHtml(content);
         }
-        return content;
-      });
-      return `<p>${processed}</p>`;
+        lastIndex = match.index + match[0].length;
+      }
+      result += escapeHtml(line.slice(lastIndex));
+      return `<p>${result}</p>`;
     })
     .join("");
 }
@@ -180,7 +198,7 @@ function formatTranslation(text) {
       "data-testid",
       "card-letter-" + letter.stateAbbr.toLowerCase() + "-" + (index + 1),
     );
-    card.setAttribute("data-letter-index", lettersData.indexOf(letter));
+    card.setAttribute("data-letter-index", index);
     card.setAttribute("tabindex", "0");
     card.setAttribute("role", "button");
     card.style.cursor = "pointer";
@@ -213,14 +231,13 @@ function formatTranslation(text) {
     card.appendChild(imgWrapper);
     card.appendChild(content);
 
-    var letterIdx = lettersData.indexOf(letter);
     card.addEventListener("click", function () {
-      openModal(letterIdx);
+      openModal(index);
     });
     card.addEventListener("keydown", function (e) {
       if (e.key === "Enter" || e.key === " ") {
         e.preventDefault();
-        openModal(letterIdx);
+        openModal(index);
       }
     });
 
@@ -228,47 +245,20 @@ function formatTranslation(text) {
   }
 
   function renderLetters(letters) {
+    letters.sort(function (a, b) {
+      return a.firstName.toLowerCase().localeCompare(b.firstName.toLowerCase());
+    });
     lettersData = letters;
     container.innerHTML = "";
 
-    var stateGroups = {};
-    var stateOrder = [];
-    letters.forEach(function (letter) {
-      if (!stateGroups[letter.state]) {
-        stateGroups[letter.state] = [];
-        stateOrder.push(letter.state);
-      }
-      stateGroups[letter.state].push(letter);
+    var grid = document.createElement("div");
+    grid.className = "cards-grid";
+
+    letters.forEach(function (letter, idx) {
+      grid.appendChild(createCard(letter, idx));
     });
 
-    stateOrder.forEach(function (stateName) {
-      var group = stateGroups[stateName];
-      var stateSlug = stateName.toLowerCase().replace(/\s+/g, "-");
-
-      var section = document.createElement("section");
-      section.className = "state-section";
-      section.setAttribute("data-testid", "section-" + stateSlug);
-
-      var title = document.createElement("h2");
-      title.className = "state-title";
-      title.setAttribute("data-testid", "text-state-" + stateSlug);
-      title.textContent = stateName;
-
-      var divider = document.createElement("div");
-      divider.className = "state-divider";
-
-      var grid = document.createElement("div");
-      grid.className = "cards-grid";
-
-      group.forEach(function (letter, idx) {
-        grid.appendChild(createCard(letter, idx));
-      });
-
-      section.appendChild(title);
-      section.appendChild(divider);
-      section.appendChild(grid);
-      container.appendChild(section);
-    });
+    container.appendChild(grid);
   }
 
   var searchIcon = document.querySelector(".search-icon");
@@ -291,25 +281,19 @@ function formatTranslation(text) {
 
   function filterCards(query) {
     var q = query.toLowerCase().trim();
-    var sections = container.querySelectorAll(".state-section");
-    sections.forEach(function (section) {
-      var cards = section.querySelectorAll(".letter-card");
-      var visibleCount = 0;
-      cards.forEach(function (card) {
-        var idx = parseInt(card.getAttribute("data-letter-index"), 10);
-        var letter = lettersData[idx];
-        if (!letter) return;
-        var match =
-          !q ||
-          letter.firstName.toLowerCase().indexOf(q) !== -1 ||
-          letter.state.toLowerCase().indexOf(q) !== -1 ||
-          letter.stateAbbr.toLowerCase().indexOf(q) !== -1 ||
-          letter.translation.toLowerCase().indexOf(q) !== -1 ||
-          letter.descriptions.join(" ").toLowerCase().indexOf(q) !== -1;
-        card.style.display = match ? "" : "none";
-        if (match) visibleCount++;
-      });
-      section.style.display = visibleCount > 0 ? "" : "none";
+    var cards = container.querySelectorAll(".letter-card");
+    cards.forEach(function (card) {
+      var idx = parseInt(card.getAttribute("data-letter-index"), 10);
+      var letter = lettersData[idx];
+      if (!letter) return;
+      var match =
+        !q ||
+        letter.firstName.toLowerCase().indexOf(q) !== -1 ||
+        letter.state.toLowerCase().indexOf(q) !== -1 ||
+        letter.stateAbbr.toLowerCase().indexOf(q) !== -1 ||
+        letter.translation.toLowerCase().indexOf(q) !== -1 ||
+        letter.descriptions.join(" ").toLowerCase().indexOf(q) !== -1;
+      card.style.display = match ? "" : "none";
     });
   }
 

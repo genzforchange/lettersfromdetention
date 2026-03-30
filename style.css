@@ -151,26 +151,8 @@ body {
   text-transform: uppercase;
 }
 
-.state-section {
-  padding: 0 50px;
-  margin-top: 10px;
-}
-
-.state-section + .state-section {
-  margin-top: 100px;
-}
-
-.state-title {
-  font-weight: 700;
-  font-size: var(--h2-size);
-  line-height: 40px;
-  margin-bottom: 10px;
-}
-
-.state-divider {
-  height: 1px;
-  background: #000;
-  margin-bottom: 51px;
+#lettersContainer {
+  padding: 10px 50px 0;
 }
 
 .cards-grid {
@@ -437,12 +419,8 @@ body {
     padding: 75px;
   }
 
-  .state-section {
-    padding: 0 30px;
-  }
-
-  .state-title {
-    font-size: var(--h2-size);
+  #lettersContainer {
+    padding: 10px 30px 0;
   }
 
   .cards-grid {
@@ -553,16 +531,8 @@ body {
     padding: 40px 20px;
   }
 
-  .state-section {
-    padding: 0 20px;
-  }
-
-  .state-title {
-    font-size: var(--h2-size);
-  }
-
-  .state-divider {
-    margin-bottom: 30px;
+  #lettersContainer {
+    padding: 10px 20px 0;
   }
 
   .cards-grid {
