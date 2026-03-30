@@ -178,9 +178,6 @@ body {
 }
 
 .letter-card:hover .card-name,
-.letter-card:hover .card-description {
-  color: white;
-}
 
 .card-image-wrapper {
   flex-shrink: 0;
@@ -212,14 +209,6 @@ body {
   transition: color 0.3s ease;
 }
 
-.card-description {
-  font-weight: 400;
-  font-size: var(--p-size);
-  line-height: 26px;
-  color: black;
-  transition: color 0.3s ease;
-  margin-left: 25px;
-}
 
 .footer {
   width: 100%;
@@ -453,10 +442,6 @@ body {
     line-height: 34px;
   }
 
-  .card-description {
-    font-size: var(--p-size);
-    line-height: 21px;
-  }
 
   .footer {
     padding: 25px;
@@ -570,13 +555,6 @@ body {
     line-height: 26px;
   }
 
-  .card-description {
-    font-size: var(--p-size);
-    line-height: 22px;
-    max-width: 100%;
-    margin: 0;
-    padding: 0;
-  }
 
   .footer {
     flex-direction: column;

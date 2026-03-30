@@ -218,16 +218,7 @@ function formatTranslation(text) {
     name.className = "card-name";
     name.textContent = letter.firstName;
 
-    var desc = document.createElement("ul");
-    desc.className = "card-description";
-    letter.descriptions.forEach(function (d) {
-      var li = document.createElement("li");
-      li.textContent = d;
-      desc.appendChild(li);
-    });
-
     content.appendChild(name);
-    content.appendChild(desc);
     card.appendChild(imgWrapper);
     card.appendChild(content);
 
