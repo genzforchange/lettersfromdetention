@@ -215,8 +215,7 @@ body {
 
 .trigger-warning {
   font-style: italic;
-  color: black;
-  opacity: 75%;
+  color: #cc0000;
   font-size: var(--notice-size);
   margin-top: 5px;
 }
