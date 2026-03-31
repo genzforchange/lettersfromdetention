@@ -204,8 +204,8 @@ body {
 
 .card-name {
   font-weight: 700;
-  font-size: var(--h2-size);
-  line-height: 40px;
+  font-size: clamp(18px, 2vw, 28px);
+  line-height: 1.2;
   margin-bottom: 10px;
   color: black;
   transition: color 0.3s ease;
@@ -215,9 +215,10 @@ body {
 
 .trigger-warning {
   font-style: italic;
-  color: #888;
-  font-size: 13px;
-  margin-top: 6px;
+  color: black;
+  opacity: 75%;
+  font-size: var(--notice-size);
+  margin-top: 5px;
 }
 
 
@@ -255,6 +256,11 @@ body {
   font-size: var(--notice-size);
   line-height: 16px;
   color: white;
+}
+
+.notice a{
+  color: white;
+  text-decoration: none;
 }
 
 .social-icons {
@@ -449,8 +455,8 @@ body {
   }
 
   .card-name {
-    font-size: var(--h2-size);
-    line-height: 34px;
+    font-size: clamp(18px, 3vw, 28px);
+    line-height: 1.2;
   }
 
 
@@ -563,8 +569,8 @@ body {
   }
 
   .card-name {
-    font-size: var(--h2-size);
-    line-height: 26px;
+    font-size: 20px;
+    line-height: 1.2;
   }
 
 
