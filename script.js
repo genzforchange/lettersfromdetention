@@ -257,7 +257,7 @@ function formatTranslation(text) {
         warning.className = "trigger-warning";
         warning.setAttribute("data-testid", "trigger-warning-erick");
         warning.textContent =
-          "Trigger Warning: The contents of this letter include mentions of suicide";
+          "The contents of this letter include mentions of suicide";
         card.querySelector(".card-content").appendChild(warning);
       }
       grid.appendChild(card);
