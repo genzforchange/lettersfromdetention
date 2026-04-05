@@ -25,7 +25,7 @@ const STATE_NAMES = {
 };
 
 function loadLetters() {
-  const csvPath = path.join(__dirname, "lfd.csv");
+  const csvPath = path.join(__dirname, "data.csv");
   const raw = readFileSync(csvPath, "utf-8");
   const records = parse(raw, {
     columns: true,

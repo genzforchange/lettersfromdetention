@@ -333,7 +333,7 @@ function formatTranslation(text) {
 
   updateHeroScroll();
 
-  fetch("lfd.csv")
+  fetch("data.csv")
     .then(function (res) {
       return res.text();
     })
