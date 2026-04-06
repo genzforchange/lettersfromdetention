@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Letters From Detention</title>
+    <meta
+      name="description"
+      content="Every letter is a life. Letters From Detention amplifies the voices of people in immigration detention across the United States."
+    />
+    <meta name="author" content="Gen-Z for Change" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://lettersfromdetention.org/" />
+    <meta property="og:title" content="Letters From Detention" />
+    <meta property="og:description" content="Every letter is a life. Letters From Detention amplifies the voices of people in immigration detention across the United States." />
+    <meta property="og:image" content="https://lettersfromdetention.org/assets/og-preview.png" />
+    <meta property="og:site_name" content="Letters From Detention" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Letters From Detention" />
+    <meta name="twitter:description" content="Every letter is a life. Letters From Detention amplifies the voices of people in immigration detention across the United States." />
+    <meta name="twitter:image" content="https://lettersfromdetention.org/assets/og-preview.png" />
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📝</text></svg>">
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="header" data-testid="header">
+        <h1 class="header-title" data-testid="text-page-title">
+          Letters From Detention
+        </h1>
+        <div class="header-icons">
+          <div class="search-icon" data-testid="button-search">
+            <div class="search-circle"></div>
+            <div class="search-handle"></div>
+          </div>
+        </div>
+      </header>
+
+      <div class="divider"></div>
+
+      <div
+        class="search-bar-container"
+        id="searchBarContainer"
+        data-testid="search-bar-container"
+      >
+        <input
+          type="text"
+          class="search-input"
+          id="searchInput"
+          data-testid="input-search"
+          placeholder="Search Letters..."
+          aria-label="Search Letters"
+        />
+      </div>
+
+      <section class="hero" data-testid="section-hero">
+        <img class="hero-image" src="assets/background.png" alt="Background image" />
+        <div class="hero-quote" data-testid="text-hero-quote">
+          Every letter is a life. Letters From Detention amplifies the voices of
+          people in immigration detention across the United States.
+        </div>
+      </section>
+
+      <div id="lettersContainer" data-testid="letters-container"></div>
+
+      <footer class="footer" data-testid="footer">          
+        <span class="notice"
+          >made with <3 by <a href="https://genzforchange.org/" target="_blank">gen-z for change's</a> meddling kids</span
+        >
+      </footer>
+    </div>
+
+    <div
+      class="modal-overlay"
+      id="letterModal"
+      data-testid="modal-overlay"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modalName"
+      aria-describedby="modalTranslation"
+    >
+      <div class="modal-content" data-testid="modal-content">
+        <button
+          class="modal-close"
+          id="modalClose"
+          data-testid="button-modal-close"
+          aria-label="Close letter detail"
+        >
+          &times;
+        </button>
+        <div class="modal-body">
+          <div
+            class="modal-images-container"
+            id="modalImagesContainer"
+            data-testid="modal-images-container"
+          ></div>
+          <div class="modal-text-wrapper">
+            <h2
+              class="modal-name"
+              id="modalName"
+              data-testid="text-modal-name"
+            ></h2>
+            <p
+              class="modal-translation"
+              id="modalTranslation"
+              data-testid="text-modal-translation"
+            ></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
