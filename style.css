@@ -218,6 +218,8 @@ body {
   color: #cc0000;
   font-size: var(--notice-size);
   margin-top: 5px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 
 
@@ -436,6 +438,7 @@ body {
   .letter-card {
     height: auto;
     min-height: 200px;
+    overflow: visible;
   }
 
   .card-image-wrapper {
