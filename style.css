@@ -164,12 +164,11 @@ body {
 .letter-card {
   display: flex;
   flex-direction: row;
-  height: 322px;
+  min-height: 322px;
   border: 1px solid black;
   background: white;
   color: black;
   transition: background-color 0.3s ease, color 0.3s ease;
-  overflow: hidden;
 }
 
 .letter-card:hover {
@@ -198,8 +197,9 @@ body {
 .card-content {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   margin: 25px;
+  min-width: 0;
 }
 
 .card-name {
@@ -214,9 +214,12 @@ body {
 }
 
 .trigger-warning {
+  font-style: italic;
   color: #cc0000;
   font-size: var(--notice-size);
   margin-top: 5px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 
 
@@ -433,27 +436,26 @@ body {
   }
 
   .letter-card {
-    height: auto;
     min-height: 200px;
   }
 
   .card-image-wrapper {
-    width: 140px;
-    height: 180px;
-    margin-left: 20px;
+    width: 120px;
+    height: 155px;
+    margin-left: 15px;
   }
 
   .card-image {
-    width: 140px;
-    height: 180px;
+    width: 120px;
+    height: 155px;
   }
 
   .card-content {
-    margin: 25px;
+    margin: 15px;
   }
 
   .card-name {
-    font-size: clamp(18px, 3vw, 28px);
+    font-size: clamp(16px, 2.5vw, 24px);
     line-height: 1.2;
   }
 
