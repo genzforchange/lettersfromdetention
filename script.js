@@ -247,12 +247,11 @@ function formatTranslation(text) {
 
     letters.forEach(function (letter, idx) {
       var card = createCard(letter, idx);
+      // trigger warnings
       var hasTriggerWarning =
-        letter.firstName === "Erick" ||
-        (letter.descriptions.length > 0 &&
-          letter.descriptions[0].toUpperCase().indexOf("TRIGGER WARNING") !== -1);
-
-      if (hasTriggerWarning) {
+        letter.firstName === "Erick" || letter.firstName === "Francis";
+      
+      if (hasTriggerWarning && letter.firstName== "Erick") {
         var warning = document.createElement("div");
         warning.className = "trigger-warning";
         warning.setAttribute("data-testid", "trigger-warning-erick");
@@ -260,6 +259,14 @@ function formatTranslation(text) {
           "The contents of this letter include mentions of suicide";
         card.querySelector(".card-content").appendChild(warning);
       }
+      else if (hasTriggerWarning && letter.firstName== "Francis") {
+        var warning = document.createElement("div");
+        warning.className = "trigger-warning";
+        warning.setAttribute("data-testid", "trigger-warning-francis");
+        warning.textContent =
+          "The contents of this letter include mentions of sexual assault";
+        card.querySelector(".card-content").appendChild(warning);
+    }
       grid.appendChild(card);
     });
 
